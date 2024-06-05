@@ -1,0 +1,22 @@
+name: Build and Test
+
+on:
+  label:
+    types:
+      - created
+
+jobs:
+  test:
+    runs-on: [self-hosted, linux, x64]
+
+    steps:
+    - name: Run application 
+      run: |
+        echo "hi"
+  test2:
+    runs-on: [self-hosted, linux, x64]
+
+    steps:
+    - name: Run application 
+      run: |
+        echo "hi2"
