@@ -32,6 +32,6 @@ jobs:
 
       - name: Build and push
         run: |
-          sudo docker run -d -p 8001:80 sdcproject1/my-image --name container1
+          sudo docker run --name container1 -d -p 8001:80 sdcproject1/my-image 
 
 #sudo docker login docker.pkg.github.com -u "${{ secrets.DOCKER_USERNAME }}" --password ${{ secrets.DOCKERHUB_TOKEN }}
