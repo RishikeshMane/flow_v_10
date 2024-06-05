@@ -5,11 +5,10 @@
 
 # echo -n "Enter Docker container name (if skipped default from file will be used): "
 # read containerName
-containerName = container1
+#containerName = container1
 # Check if prompted value isNotEmpty
-if [ $containerName ]; then
-  CONTAINER=$containerName
-fi
+
+CONTAINER=container1
 
 # Check if container exist and delete
 if [ "$(docker ps -a | grep -c $CONTAINER)" -gt 0 ]; then
