@@ -1,11 +1,11 @@
 # Goal of tghis script is to prompt for Docker container name, if it's skipped it will used infile defined name of container and then will search for specific container and delete it.
 
 # Set container default name as variable
-CONTAINER=container1
+# CONTAINER=container1
 
-echo -n "Enter Docker container name (if skipped default from file will be used): "
-read containerName
-
+# echo -n "Enter Docker container name (if skipped default from file will be used): "
+# read containerName
+containerName = container1
 # Check if prompted value isNotEmpty
 if [ $containerName ]; then
   CONTAINER=$containerName
