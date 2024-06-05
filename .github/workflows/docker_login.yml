@@ -28,5 +28,8 @@ jobs:
         run: |
           sudo docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/api_image1:v1 .
           sudo docker tag ${{ secrets.DOCKERHUB_USERNAME }}/api_image1:v1 ${{ secrets.DOCKERHUB_USERNAME }}/version1:v1
-          sudo docker login docker.pkg.github.com -u "${{ secrets.DOCKER_USERNAME }}" --password ${{ secrets.DOCKERHUB_TOKEN }}
-          sudo docker push ${{ secrets.DOCKERHUB_USERNAME }}/version1:v1
+    
+      - name: Docker Push
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/version1:v1
+
+#sudo docker login docker.pkg.github.com -u "${{ secrets.DOCKER_USERNAME }}" --password ${{ secrets.DOCKERHUB_TOKEN }}
