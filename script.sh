@@ -17,7 +17,7 @@ if [ "$(docker ps -a | grep -c $CONTAINER)" -gt 0 ]; then
   read answer
 
   if [ "$answer" != "${answer#[Yy]}" ]; then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
-    docker rm -f $CONTAINER
+    docker rm -f $CONTAINER -y
     echo "[---- Deleted container $CONTAINER]"
   else
     echo "Leaving script execution."
