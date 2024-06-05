@@ -13,15 +13,8 @@ CONTAINER=container1
 # Check if container exist and delete
 if [ "$(docker ps -a | grep -c $CONTAINER)" -gt 0 ]; then
 
-  echo -n "Do you wish to delete this container? y/n: "
-  read answer
-
-  if [ "$answer" != "${answer#[Yy]}" ]; then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
     docker rm -f $CONTAINER -y
     echo "[---- Deleted container $CONTAINER]"
-  else
-    echo "Leaving script execution."
-  fi
 
 else
   echo "[---- Container with name: $CONTAINER  doesn't exist. ]"
