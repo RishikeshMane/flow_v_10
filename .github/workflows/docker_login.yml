@@ -16,9 +16,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+ 
+  docker_push:
+    runs-on: [self-hosted, linux, x64]
+    steps:
       - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: api/imagev1:latest
+        run: |
+          sudo docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/api_image1:v1 .
