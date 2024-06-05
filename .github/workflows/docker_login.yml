@@ -29,8 +29,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Check Container
+        run: | 
+          chmod 777 script.sh
+          sudo ./script.sh
 
-      - name: Build and push
+      - name: Run Container
         run: |
           sudo docker run --name container1 -d -p 8001:80 sdcproject1/my-image 
 
